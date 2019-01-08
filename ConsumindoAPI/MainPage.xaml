@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:ConsumindoAPI"
+             x:Class="ConsumindoAPI.MainPage">
+    
+    
+     <ListView HasUnevenRows="true"
+              IsRefreshing = "{Binding IsBusy}"
+              ItemsSource="{Binding Pessoas}">
+        
+        <ListView.ItemTemplate>
+            
+            <DataTemplate>
+                
+                <ViewCell>
+                    
+                    <Grid Padding="20,30" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*" />
+                             <ColumnDefinition Width="*" />
+                            
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Grid.Row="0" 
+                               Grid.Column="0"
+                               Text="{Binding Id}"
+                               FontSize="Large"
+                               TextColor="Red"/>
+                        
+                      <Label Grid.Row="1" 
+                               Grid.Column="0"
+                               Text="{Binding Nome}"
+                               FontSize="Large"
+                               TextColor="Blue"/>
+                        
+                         <Label Grid.Row="2" 
+                               Grid.Column="0"
+                               Text="{Binding Email}"
+                               FontSize="Small"/>
+                        
+                         <Label Grid.Row="3" 
+                               Grid.Column="0"
+                                TextColor="Green"
+                               Text="{Binding Regra}"
+                               FontSize="Small"/>
+                        
+                    </Grid>
+                    
+                </ViewCell>
+                
+            </DataTemplate>
+            
+        </ListView.ItemTemplate>
+        
+       
+    </ListView>
+</ContentPage>

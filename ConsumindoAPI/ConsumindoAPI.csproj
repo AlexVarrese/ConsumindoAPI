@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Xamarin.Forms.MVVMBase" Version="1.0.0" />
+    <PackageReference Include="Xamarin.Helpers" Version="1.0.3" />
+    <PackageReference Include="LiveXAML" Version="2.1.58" />
+    <PackageReference Include="Refit" Version="4.6.58" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Model\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Services\Tradicional\" />
+    <Folder Include="Services\Refit\" />
+    <Folder Include="Services\XamarinHelpers\" />
+    <Folder Include="Services\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="MenuPage.xaml.cs" />
+  </ItemGroup>
+</Project>
