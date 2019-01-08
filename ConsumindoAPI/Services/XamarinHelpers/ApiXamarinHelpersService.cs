@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using ConsumindoAPI.Helpers;
 using ConsumindoAPI.Model;
 
 namespace ConsumindoAPI.Services
@@ -19,12 +20,12 @@ namespace ConsumindoAPI.Services
         {
             try
             {
-                var httpClient = new HttpClient();
+                var httpClient = new HttpClient() { BaseAddress = new Uri(Constantes.ApiBaseUrl) }; ;
 
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //GetAsync Return with Object
-                var response = await httpClient.GetAsync<Usuario>("person");
+                var response = await httpClient.GetAsync<Usuario>("person").ConfigureAwait(false);
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {

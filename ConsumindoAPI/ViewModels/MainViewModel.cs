@@ -21,9 +21,9 @@ namespace ConsumindoAPI.ViewModels
 
             Pessoas = new ObservableCollection<Pessoa>();
 
-            // _ApiService = new ApiService();
+             _ApiService = new ApiService();
 
-             _ApiService = new ApiXamarinHelpersService();
+           //  _ApiService = new ApiXamarinHelpersService();
 
             // _ApiService = RestService.For<IRefitApiService>(Constantes.ApiBaseUrl);
         }
